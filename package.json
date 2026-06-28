@@ -30,7 +30,11 @@
       "default": "./config.ts"
     },
     "./styles/style.css": "./styles/style.css",
-    "./client": "./client.d.ts"
+    "./client": "./client.d.ts",
+    "./site-data": {
+      "types": "./site-data/index.ts",
+      "default": "./site-data/index.ts"
+    }
   },
   "types": "./index.ts",
   "files": [
@@ -47,6 +51,8 @@
     "utils",
     "types",
     "types/theme-config.ts",
+    "site-data",
+    "DOCS_STRUCTURE.md",
     "styles"
   ],
   "peerDependencies": {
@@ -54,6 +60,7 @@
     "vue": "^3.5.0"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "@vueuse/core": "^14.3.0",
     "animejs": "^4.5.0",
     "medium-zoom": "^1.1.0"

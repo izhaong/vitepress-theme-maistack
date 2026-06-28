@@ -130,7 +130,7 @@ VitePress 默认按文件路径生成 URL。本站为兼容旧 VuePress / vdoing
 permalink: /pages/abc123/
 ```
 
-构建时由 `utils/site-data.mts` 写入 `config.mts` 的 `rewrites`，**属于站点数据层约定**，非 VP 内置字段。
+构建时由 `vitepress-theme-maistack/site-data` 的 `resolveMaistackSiteData` 写入 `config.mts` 的 `rewrites`，**属于站点数据层约定**，非 VP 内置字段。
 
 ---
 
@@ -153,4 +153,4 @@ permalink: /pages/abc123/
 - `isCatalogueFrontmatter` → `pageComponent.name === 'Catalogue'`
 - `isIndexSpecialPage` → `categoriesPage` / `tagsPage` / `archivesPage`
 
-主题 `Layout.vue`、`composables/layout.ts`、`site-data.mts` 均引用上述工具，避免字段散落重复判断。
+主题 `Layout.vue`、`composables/layout.ts`、`site-data/build-site-data.ts` 均引用上述工具，避免字段散落重复判断。
