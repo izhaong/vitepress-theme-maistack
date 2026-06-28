@@ -21,13 +21,22 @@
     "maistack"
   ],
   "exports": {
-    ".": "./index.ts",
-    "./config": "./config.ts",
-    "./styles/style.css": "./styles/style.css"
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./config": {
+      "types": "./config.ts",
+      "default": "./config.ts"
+    },
+    "./styles/style.css": "./styles/style.css",
+    "./client": "./client.d.ts"
   },
+  "types": "./index.ts",
   "files": [
     "index.ts",
     "create-theme.ts",
+    "client.d.ts",
     "config.ts",
     "site-data-store.ts",
     "Layout.vue",
@@ -37,6 +46,7 @@
     "preferences",
     "utils",
     "types",
+    "types/theme-config.ts",
     "styles"
   ],
   "peerDependencies": {

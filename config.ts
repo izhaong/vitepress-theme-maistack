@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
+import type { ThemeConfig } from "./types/theme-config";
 
 const __packageDir = dirname(fileURLToPath(import.meta.url));
 const layoutPath = resolve(__packageDir, "./composables/layout.ts");
@@ -28,7 +29,7 @@ function vitepressThemeComposablesAlias() {
   };
 }
 
-export default defineConfig({
+export default defineConfig<ThemeConfig>({
   markdown: {
     lineNumbers: true,
     theme: {
@@ -73,3 +74,4 @@ export default defineConfig({
     },
   },
 });
+export type { ThemeConfig } from "./types/theme-config";

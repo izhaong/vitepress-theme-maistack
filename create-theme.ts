@@ -1,6 +1,6 @@
 import DefaultTheme from "vitepress/theme";
 import mediumZoom from "medium-zoom";
-import { inBrowser } from "vitepress";
+import { inBrowser, type EnhanceAppContext } from "vitepress";
 import type { SiteData } from "./types/site-data";
 import { configureSiteData } from "./site-data-store";
 import Layout from "./Layout.vue";
@@ -24,6 +24,7 @@ export interface MaistackThemeOptions {
   siteData: SiteData;
 }
 
+/** 创建麦栈主题对象（符合 VitePress Theme 接口，供 `.vitepress/theme/index.ts` 默认导出）。 */
 export function createMaistackTheme(options: MaistackThemeOptions) {
   configureSiteData(options.siteData);
 
@@ -34,13 +35,7 @@ export function createMaistackTheme(options: MaistackThemeOptions) {
   return {
     extends: DefaultTheme,
     Layout,
-    enhanceApp({
-      app,
-      router,
-    }: {
-      app: import("vue").App;
-      router: { onAfterRouteChanged?: () => void };
-    }) {
+    enhanceApp({ app, router }: EnhanceAppContext) {
       app.directive("reveal", vReveal);
       if (!inBrowser) return;
       router.onAfterRouteChanged = () => {
