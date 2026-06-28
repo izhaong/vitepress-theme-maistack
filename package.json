@@ -1,0 +1,57 @@
+{
+  "name": "vitepress-theme-maistack",
+  "version": "0.1.0",
+  "description": "麦栈 — VitePress 2 知识库兼博客主题",
+  "type": "module",
+  "license": "MIT",
+  "author": "izhaong",
+  "homepage": "https://github.com/izhaong/vitepress-theme-maistack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izhaong/vitepress-theme-maistack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/izhaong/vitepress-theme-maistack/issues"
+  },
+  "keywords": [
+    "vitepress",
+    "theme",
+    "blog",
+    "documentation",
+    "maistack"
+  ],
+  "exports": {
+    ".": "./index.ts",
+    "./config": "./config.ts",
+    "./styles/style.css": "./styles/style.css"
+  },
+  "files": [
+    "index.ts",
+    "create-theme.ts",
+    "config.ts",
+    "site-data-store.ts",
+    "Layout.vue",
+    "FRONTMATTER.md",
+    "components",
+    "composables",
+    "preferences",
+    "utils",
+    "types",
+    "styles"
+  ],
+  "peerDependencies": {
+    "vitepress": "^2.0.0-alpha.17",
+    "vue": "^3.5.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.3.0",
+    "animejs": "^4.5.0",
+    "medium-zoom": "^1.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "tailwindcss": "^4.3.1",
+    "vitepress": "2.0.0-alpha.17",
+    "vue": "^3.5.39"
+  }
+}
